@@ -1,0 +1,171 @@
+<section class="section">
+    <div class="card rounded">
+        <div class="card-body">
+            <h1>Site Master</h1>
+            <br>
+            <!-- Multi Columns Form -->
+            <form [formGroup]="sitemasterform">
+                <div class="row g-3">
+                    <div class="col-md-4">
+                        <label for="inputName5" class="form-label">Site Name</label>
+                        <input style="border: solid 1px;"type="text" formControlName="sitename" class="form-control" id="inputName5">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="inputName5" class="form-label">Site Address</label>
+                        <input style="border: solid 1px;"type="text" formControlName="siteaddress" class="form-control" id="inputName5">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="inputState" class="form-label">Site Incharge</label>
+                        <select style="border: solid 1px;" id="inputState" formControlName="siteincharge" class="form-select">
+                            <option [selected]="true">...Select Site..</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="inputName5" class="form-label">Start Date</label>
+                        <input style="border: solid 1px;" type="date" formControlName="startdate" class="form-control" id="inputName5">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="inputName5" class="form-label">Estimate Date</label>
+                        <input style="border: solid 1px;" type="date" formControlName="estimatedate" class="form-control" id="inputName5">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="inputName5" class="form-label">Total Area</label>
+                        <input style="border: solid 1px;"type="text" formControlName="totalarea" class="form-control" id="inputName5">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="inputName5" class="form-label">Number of Plots</label>
+                        <input style="border: solid 1px;"type="text" formControlName="plots" class="form-control" id="inputName5">
+                    </div>
+                  
+                </div>
+                <div class="row mt-4 justify-content-between">
+                    <div class="col-md-4">
+                        <h2>Add Plot Details</h2>
+                    </div>
+                    <div class="col-md-4">
+                    <button type="submit" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Add Plot</button>
+                </div>
+                </div>
+            </form><!-- End Multi Columns Form -->
+            <!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Plot Details</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form [formGroup]="sitemastermodalform">
+          <div class="row g-3">
+            <div class="col-md-4">
+                <label for="inputName5" class="form-label">Plot No</label>
+                <input style="border: solid 1px;"type="text" formControlName="plotno" class="form-control" id="inputName5">
+            </div>
+            <div class="col-md-4">
+                <label for="inputName5" class="form-label">Area Sq.m</label>
+                <input style="border: solid 1px;"type="text" formControlName="areasqm" class="form-control" id="inputName5">
+            </div>
+            <div class="col-md-4">
+                <label for="inputName5" class="form-label">Area Sq.ft</label>
+                <input style="border: solid 1px;"type="text" formControlName="areasqft" class="form-control" id="inputName5">
+            </div>
+            <div class="col-md-4">
+                <label for="inputName5" class="form-label">Government Rate</label>
+                <input style="border: solid 1px;"type="text" formControlName="govrate" class="form-control" id="inputName5">
+            </div>
+            <div class="col-md-4">
+                <label for="inputName5" class="form-label">Basic Rate</label>
+                <input style="border: solid 1px;"type="text" formControlName="basicrate" class="form-control" id="inputName5">
+            </div>
+          </div>
+          <div class="row g-3 mt-2 mb-3">
+            <div class="col-md-4">
+                <label for="inputState" class="form-label">Booking Remark</label>
+                <select style="border: solid 1px;" id="inputState" formControlName="bookingr" class="form-select">
+                    <option [selected]="true">...Select Booking Remark..</option>
+                </select>
+            </div>
+          </div>
+          <div class="row g-3">
+            <div class="col-md-4">
+                <label for="inputName5" class="form-label">Customer ID</label>
+                <input style="border: solid 1px;"type="text" formControlName="customerid" class="form-control" id="inputName5">
+            </div>
+            <div class="col-md-4">
+                <label for="inputName5" class="form-label">Customer Name</label>
+                <input style="border: solid 1px;"type="text" formControlName="customername" class="form-control" id="inputName5">
+            </div>
+            <div class="col-md-4">
+                <label for="inputName5" class="form-label">Address</label>
+                <input style="border: solid 1px;"type="text" formControlName="address" class="form-control" id="inputName5">
+            </div>
+            <div class="col-md-4">
+                <label for="inputName5" class="form-label">Mobile No</label>
+                <input style="border: solid 1px;"type="number" formControlName="mobile" class="form-control" id="inputName5">
+            </div>
+            <div class="col-md-4">
+                <label for="inputName5" class="form-label">Reference</label>
+                <input style="border: solid 1px;"type="text" formControlName="reference" class="form-control" id="inputName5">
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" (click)="submit()" class="btn btn-success">Save</button>
+            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+          </div>
+            </form>
+        </div>
+      </div>
+    </div>
+  </div>
+            <div class="mat-elevation-z8 mt-3"  style="height: 400px; overflow-y: auto; overflow-x: hidden;">
+                <table class="table datatable" mat-table  [dataSource]="dataSource">
+                    <ng-container matColumnDef="Sr No.">
+                        <th mat-header-cell *matHeaderCellDef> Sr No. </th>
+                        <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+                    </ng-container>
+            
+                    <ng-container matColumnDef="Plot No">
+                        <th mat-header-cell *matHeaderCellDef> Plot No </th>
+                        <td mat-cell *matCellDef="let element"> {{element. plotno}} </td>
+                    </ng-container>
+            
+                    <ng-container matColumnDef="Area sq.m">
+                        <th mat-header-cell *matHeaderCellDef> Area sq.m </th>
+                        <td mat-cell *matCellDef="let element"> {{element. areasqm}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="Area sq.ft">
+                        <th mat-header-cell *matHeaderCellDef> Area sq.ft </th>
+                        <td mat-cell *matCellDef="let element"> {{element. areasqft}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="Goverment Rate">
+                        <th mat-header-cell *matHeaderCellDef> Goverment Rate </th>
+                        <td mat-cell *matCellDef="let element"> {{element.govtrate}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="Company Rate">
+                        <th mat-header-cell *matHeaderCellDef> Company Rate </th>
+                        <td mat-cell *matCellDef="let element"> {{element.companyrate}} </td>
+                    </ng-container>
+            
+                    <ng-container matColumnDef="Action">
+                        <th mat-header-cell *matHeaderCellDef> Action </th>
+                        <td mat-cell *matCellDef="let element"> 
+                        <span class="btn bg-primary-ico shadow btn-xs sharp mr-1"> 
+                            <i class="bi bi-pencil" style="font-size: 14px;"></i> 
+                        </span> 
+                        <span class="btn bg-danger-ico shadow btn-xs sharp mr-1"> 
+                            <i class="bi bi-trash" style="font-size: 14px;"></i> 
+                        </span>
+                    </td>
+                    </ng-container>
+            
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>

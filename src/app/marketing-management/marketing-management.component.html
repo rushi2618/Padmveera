@@ -1,0 +1,185 @@
+<section class="section">
+    <div class="card rounded">
+        <div class="card-body">
+            <h1>Marketing Management</h1>
+            <br>
+            <!-- Multi Columns Form -->
+            <form [formGroup]="marketingmanagement">
+                <div class="row g-3">
+                    <div class="col-md-4">
+                        <label for="inputState" class="form-label">Marketing Type</label>
+                        <select style="border: solid 1px;" id="inputState" formControlName="type"
+                            class="form-select">
+                            <option [selected]="true">...Select..</option>
+                            <option>Digital</option>
+                            <option>Electroncis</option>
+                            <option>Outdoor</option>
+                            <option>Printing Media</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="mt-4">
+                    <button type="submit" class="btn btn-success" (click)="submit()">Search</button>&nbsp;
+                    <button type="submit" class="btn btn-danger" (click)="submit()">Clear</button>&nbsp;
+                    <button type="submit" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-primary">Add Marketing</button>
+                </div>
+            </form><!-- End Multi Columns Form -->
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">Add Marketing</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form [formGroup]="marketingmanagementmodalform">
+                                <div class="row g-3">
+                                    <div class="col-md-4">
+                                        <label for="inputName5" class="form-label">Site Name</label>
+                                        <input style="border: solid 1px;" type="text" formControlName="site"
+                                            class="form-control" id="inputName5">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label for="inputName5" class="form-label">Date</label>
+                                        <input style="border: solid 1px;" type="date" formControlName="date"
+                                            class="form-control" id="inputName5">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label for="inputState" class="form-label">Type</label>
+                                        <select style="border: solid 1px;" id="inputState" formControlName="type"
+                                            class="form-select">
+                                            <option [selected]="true">...Select Type..</option>
+                                            <option>Digital</option>
+                                            <option>Electronics</option>
+                                            <option>Outdoor</option>
+                                            <option>Printing Media</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label for="inputName5" class="form-label">Assigned Company</label>
+                                        <input style="border: solid 1px;" type="text" formControlName="assigned"
+                                            class="form-control" id="inputName5">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label for="inputState" class="form-label">Description</label>
+                                        <select style="border: solid 1px;" id="inputState" formControlName="desc"
+                                            class="form-select">
+                                            <option [selected]="true">...Select Description..</option>
+                                            <option>FLEX, HOLDING</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label for="inputName5" class="form-label">Page</label>
+                                        <input style="border: solid 1px;" type="text" formControlName="page"
+                                            class="form-control" id="inputName5">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label for="inputName5" class="form-label">Place</label>
+                                        <input style="border: solid 1px;" type="text" formControlName="place"
+                                            class="form-control" id="inputName5">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label for="inputName5" class="form-label">Rate</label>
+                                        <input style="border: solid 1px;" type="text" formControlName="rate"
+                                            class="form-control" id="inputName5">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label for="inputName5" class="form-label">Name</label>
+                                        <input style="border: solid 1px;" type="text" formControlName="name"
+                                            class="form-control" id="inputName5">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label for="inputName5" class="form-label">Quantity</label>
+                                        <input style="border: solid 1px;" type="text" formControlName="quan"
+                                            class="form-control" id="inputName5">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label for="inputName5" class="form-label">Total</label>
+                                        <input style="border: solid 1px;" type="text" formControlName="total" readonly
+                                            class="form-control" id="inputName5">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label for="inputName5" class="form-label">Narration</label>
+                                        <input style="border: solid 1px;" type="text" formControlName="narration"
+                                            class="form-control" id="inputName5">
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" (click)="submit()" class="btn btn-success">Save</button>
+                                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mat-elevation-z8 mt-3">
+                <table class="table datatable" mat-table [dataSource]="dataSource">
+                    <ng-container matColumnDef="Sr No.">
+                        <th mat-header-cell *matHeaderCellDef> Sr No. </th>
+                        <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="Site Name">
+                        <th mat-header-cell *matHeaderCellDef>Site Name </th>
+                        <td mat-cell *matCellDef="let element"> {{element. plotno}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="Date">
+                        <th mat-header-cell *matHeaderCellDef> Date </th>
+                        <td mat-cell *matCellDef="let element"> {{element. areasqm}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="Description">
+                        <th mat-header-cell *matHeaderCellDef> Description	</th>
+                        <td mat-cell *matCellDef="let element"> {{element. areasqft}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="Assigned Company">
+                        <th mat-header-cell *matHeaderCellDef> Assigned Company </th>
+                        <td mat-cell *matCellDef="let element"> {{element.govtrate}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="Name">
+                        <th mat-header-cell *matHeaderCellDef> Name </th>
+                        <td mat-cell *matCellDef="let element"> {{element.companyrate}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="Rate">
+                        <th mat-header-cell *matHeaderCellDef> Rate </th>
+                        <td mat-cell *matCellDef="let element"> {{element.companyrate}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="Quantity">
+                        <th mat-header-cell *matHeaderCellDef> Quantity </th>
+                        <td mat-cell *matCellDef="let element"> {{element.companyrate}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="Total">
+                        <th mat-header-cell *matHeaderCellDef> Total </th>
+                        <td mat-cell *matCellDef="let element"> {{element.companyrate}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="Action">
+                        <th mat-header-cell *matHeaderCellDef> Action </th>
+                        <td mat-cell *matCellDef="let element">
+                            <span class="btn bg-primary-ico shadow btn-xs sharp mr-1">
+                                <i class="bi bi-pencil" style="font-size: 14px;"></i>
+                            </span>
+                            <span class="btn bg-danger-ico shadow btn-xs sharp mr-1">
+                                <i class="bi bi-trash" style="font-size: 14px;"></i>
+                            </span>
+                        </td>
+                    </ng-container>
+
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                </table>
+                <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons aria-label="Select page of periodic elements">
+                </mat-paginator>
+            </div>
+        </div>
+    </div>
+</section>

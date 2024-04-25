@@ -1,0 +1,93 @@
+<section class="section">
+    <div class="card rounded">
+        <div class="card-body">
+            <h1>User Master</h1>
+            <br>
+            <!-- Multi Columns Form -->
+            <form [formGroup]=" usermasterform ">
+                <div class="row g-3">
+                <div class="col-md-4">
+                    <label for="inputState" class="form-label">User Name</label>
+                    <select style="border: solid 1px;" id="inputState" (change)="getSingleEmployee($event)" formControlName="Empid" class="form-select">
+                        <option selected>...Select User..</option>
+                        <option *ngFor="let item of employeeList" [value]="item.id">{{item.employee_name}}</option>
+                    </select>
+                </div>
+                    <div class="col-md-4">
+                        <label for="inputName5" class="form-label">Email Id</label>
+                        <input style="border: solid 1px;"type="email" readonly formControlName="email" class="form-control" id="inputName5">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="inputName5" class="form-label">Mobile No</label>
+                        <input style="border: solid 1px;"type="number" readonly formControlName="mobile_no" class="form-control" id="inputName5">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="inputState" class="form-label">Role</label>
+                        <select style="border: solid 1px;"  id="inputState" formControlName="role" class="form-select">
+                            <option [selected]="true">...Select User..</option>
+                            <option>Admin</option>
+                            <option>Accountant</option>
+                            <option>Assist Accountant</option>
+                            <option>Site Mananger</option>
+                            <option>Marketing</option>
+                            <option>HR</option>
+                            <option>Supervisor</option>
+                            <option>Stock Handler</option>
+                            <option>Govt Officer</option>
+                        </select>
+                    </div>
+                </div>
+                <br>
+                <div class="mt-3">
+                    <button type="submit" class="btn btn-success" (click)="submit()">Save</button>&nbsp;
+                    <button type="reset" class="btn btn-danger">Cancel</button>
+                </div>
+            </form><!-- End Multi Columns Form -->
+            <div class="mat-elevation-z8 mt-3">
+                <table class="table datatable" mat-table [dataSource]="dataSource">
+                    <ng-container matColumnDef="Sr No.">
+                        <th mat-header-cell *matHeaderCellDef> Sr No. </th>
+                        <td mat-cell *matCellDef="let element;index as i"> {{i+1}} </td>
+                    </ng-container>
+            
+                    <ng-container matColumnDef="User Name">
+                        <th mat-header-cell *matHeaderCellDef> User Name </th>
+                        <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+                    </ng-container>
+            
+                    <ng-container matColumnDef="Email Id">
+                        <th mat-header-cell *matHeaderCellDef> Email Id </th>
+                        <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="Role">
+                        <th mat-header-cell *matHeaderCellDef> Role </th>
+                        <td mat-cell *matCellDef="let element"> {{element.role}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="Mobile No">
+                        <th mat-header-cell *matHeaderCellDef> Mobile No </th>
+                        <td mat-cell *matCellDef="let element"> {{element.mobile_no}} </td>
+                    </ng-container>
+            
+                    <ng-container matColumnDef="Action">
+                        <th mat-header-cell *matHeaderCellDef> Action </th>
+                        <td mat-cell *matCellDef="let element"> 
+                            <span class="btn bg-primary-ico shadow btn-xs sharp mr-1" (click)="editData(element)"> 
+                                <i class="bi bi-pencil" style="font-size: 14px;"></i> 
+                            </span> 
+                            <span class="btn bg-danger-ico shadow btn-xs sharp mr-1" (click)="deleteData(element.id)"> 
+                                <i class="bi bi-trash" style="font-size: 14px;"></i> 
+                            </span>
+                        </td>
+                    </ng-container>
+            
+                    <tr mat-header-row  *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                </table>
+                <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons aria-label="Select page of periodic elements">
+                </mat-paginator>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,148 @@
+<section class="section">
+    <div class="card rounded">
+        <div class="card-body">
+            <h1>Register Customer</h1>
+            <br>
+            <!-- Multi Columns Form -->
+            <form [formGroup]="registerCustomerform ">
+                <div class="row g-3">
+                    <div class="col-md-4">
+                        <label for="inputName5" class="form-label">Site Name</label>
+                        <input style="border: solid 1px;"type="text" formControlName="site_name" class="form-control" id="inputName5">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="inputName5" class="form-label">Register Customer Name</label>
+                        <input style="border: solid 1px;"type="text" formControlName="register_customer" class="form-control" id="inputName5">
+                    </div>
+                    <div class="col-md-12 mt-3 d-flex justify-content-center align-items-start" style="background-color: aquamarine;height: 33px;">
+                        <h2>Customer Details</h2>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="inputName5" class="form-label">Email ID</label>
+                        <input style="border: solid 1px;"type="email" formControlName="email_id" class="form-control" id="inputName5">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="inputName5" class="form-label">Address</label>
+                        <input style="border: solid 1px;"type="text" formControlName="address" class="form-control" id="inputName5">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="inputName5" class="form-label">Mobile No</label>
+                        <input style="border: solid 1px;"type="number" formControlName="mobile_no" class="form-control" id="inputName5">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="inputName5" class="form-label">Visited Date</label>
+                        <input style="border: solid 1px;"type="date" formControlName="visited_date" class="form-control" id="inputName5">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="inputName5" class="form-label">Lead Source</label>
+                        <input style="border: solid 1px;"type="text" formControlName="lead_source" class="form-control" id="inputName5">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="inputName5" class="form-label">Lead By</label>
+                        <input style="border: solid 1px;"type="text" formControlName="lead_by" class="form-control" id="inputName5">
+                    </div>
+                    <div class="col-md-12 mt-3 d-flex justify-content-center align-items-start" style="background-color: aquamarine;height: 33px;">
+                        <h2>Plot Details</h2>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="inputName5" class="form-label">Plot No</label>
+                        <input style="border: solid 1px;"type="text" formControlName="plot_num" class="form-control" id="inputName5">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="inputName5" class="form-label">Basic Rate</label>
+                        <input style="border: solid 1px;"type="text" formControlName="basic_rate" class="form-control" id="inputName5">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="inputName5" class="form-label">Area Sqmt</label>
+                        <input style="border: solid 1px;"type="number" formControlName="area_sqmt" class="form-control" id="inputName5">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="inputName5" class="form-label">Area Sqft</label>
+                        <input style="border: solid 1px;"type="text" formControlName="area_sqft" class="form-control" id="inputName5">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="inputName5" class="form-label">Discounted Rate</label>
+                        <input style="border: solid 1px;"type="text" formControlName="discounted_rate" class="form-control" id="inputName5">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="inputName5" class="form-label">Discount</label>
+                        <input style="border: solid 1px;"type="text" formControlName="discount" class="form-control" id="inputName5">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="inputName5" class="form-label">Total Plot Amount</label>
+                        <input style="border: solid 1px;"type="text" formControlName="total_plot_amount" class="form-control" id="inputName5">
+                    </div>
+                    <div class="col-md-12 mt-3 d-flex justify-content-center align-items-start" style="background-color: aquamarine;height: 33px;">
+                        <h2>Agreement Value & Legal Charges</h2>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="inputName5" class="form-label">Register Date</label>
+                        <input style="border: solid 1px;"type="date" formControlName="register_date" class="form-control" id="inputName5">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="inputName5" class="form-label">Register By</label>
+                        <input style="border: solid 1px;"type="text" formControlName="register_by" class="form-control" id="inputName5">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="inputName5" class="form-label">Government Recknor</label>
+                        <input style="border: solid 1px;"type="text" formControlName="reckoner_rate" class="form-control" id="inputName5">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="inputName5" class="form-label">Government Value</label>
+                        <input style="border: solid 1px;"type="text" formControlName="gov_value" class="form-control" id="inputName5">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="inputName5" class="form-label">Value Of Agreement</label>
+                        <input style="border: solid 1px;"type="text" formControlName="value_of_agreement" class="form-control" id="inputName5">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="inputName5" class="form-label">Tax Value In %</label>
+                        <input style="border: solid 1px;"type="text" formControlName="tax_value_in" class="form-control" id="inputName5">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="inputName5" class="form-label">Stamp Duties</label>
+                        <input style="border: solid 1px;"type="text" formControlName="stamp_duties" class="form-control" id="inputName5">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="inputName5" class="form-label">Reg. Tax Values in %</label>
+                        <input style="border: solid 1px;"type="text" formControlName="tax_values" class="form-control" id="inputName5">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="inputName5" class="form-label">Registration Fees</label>
+                        <input style="border: solid 1px;"type="text" formControlName="reg_fees" class="form-control" id="inputName5">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="inputName5" class="form-label">Goods & Services Tax (GST)</label>
+                        <select style="border: solid 1px;" id="inputState" formControlName="gst" class="form-select">
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="inputName5" class="form-label">Legal Charges</label>
+                        <input style="border: solid 1px;"type="text" formControlName="legal_charge" class="form-control" id="inputName5">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="inputName5" class="form-label">Total Extra Charges</label>
+                        <input style="border: solid 1px;"type="text" formControlName="total_extra_charge" class="form-control" id="inputName5">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="inputName5" class="form-label">Grand Total</label>
+                        <input style="border: solid 1px;"type="text" formControlName="grand_total" class="form-control" id="inputName5">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="inputName5" class="form-label">Amount Paid</label>
+                        <input style="border: solid 1px;"type="text" formControlName="amount_paid" class="form-control" id="inputName5">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="inputName5" class="form-label">Remaining Amount</label>
+                        <input style="border: solid 1px;"type="text" formControlName="remaining_amount" class="form-control" id="inputName5">
+                    </div>
+                </div>
+                <br>
+                <div class="mt-3">
+                    <button type="submit" class="btn btn-success" (click)="submit()">Save</button>&nbsp;
+                    <button type="reset" class="btn btn-danger">Cancel</button>
+                </div>
+            </form><!-- End Multi Columns Form -->
+        </div>
+    </div>
+</section>

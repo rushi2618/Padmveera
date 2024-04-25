@@ -1,0 +1,177 @@
+<section class="section">
+    <div class="card rounded">
+        <div class="card-body">
+            <h1>Task Management</h1>
+            <br>
+            <!-- Multi Columns Form -->
+            <form [formGroup]=" taskmanagement">
+                <div class="row g-3">
+                    <div class="col-md-4">
+                        <label for="inputName5" class="form-label">Date</label>
+                        <input style="border: solid 1px;" type="date" formControlName="date" class="form-control"
+                            id="inputName5">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="inputState" class="form-label">Assigned To</label>
+                        <select style="border: solid 1px;" id="inputState" formControlName="assigned"
+                            class="form-select">
+                            <option [selected]="true">...Select..</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="inputState" class="form-label">Status</label>
+                        <select style="border: solid 1px;" id="inputState" formControlName="status" class="form-select">
+                            <option [selected]="true">...Select Status..</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="mt-4">
+                    <button type="submit" class="btn btn-success" (click)="submit()">Search</button>&nbsp;
+                    <button type="submit" class="btn btn-danger" (click)="submit()">Clear</button>&nbsp;
+                    <button type="submit" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-primary">Add</button>
+                </div>
+            </form><!-- End Multi Columns Form -->
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">Task Management</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form [formGroup]="taskmanagementmodalform">
+                                <div class="row g-3">
+                                    <div class="col-md-4">
+                                        <label for="inputName5" class="form-label">Task Name</label>
+                                        <input style="border: solid 1px;" type="text" formControlName="task"
+                                            class="form-control" id="inputName5">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label for="inputState" class="form-label">Site Name</label>
+                                        <select style="border: solid 1px;" id="inputState" formControlName="site"
+                                            class="form-select">
+                                            <option [selected]="true">...Select Site Name..</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label for="inputState" class="form-label">Assigned To</label>
+                                        <select style="border: solid 1px;" id="inputState" formControlName="assigned"
+                                            class="form-select">
+                                            <option [selected]="true">...Select Assigned To..</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label for="inputState" class="form-label">Priority</label>
+                                        <select style="border: solid 1px;" id="inputState" formControlName="priority"
+                                            class="form-select">
+                                            <option [selected]="true">...Select Priority..</option>
+                                            <option>High</option>
+                                            <option>Medium</option>
+                                            <option>Low</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label for="inputName5" class="form-label">Start Date</label>
+                                        <input style="border: solid 1px;" type="date" formControlName="sdate"
+                                            class="form-control" id="inputName5">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label for="inputName5" class="form-label">Due Date</label>
+                                        <input style="border: solid 1px;" type="date" formControlName="ddate"
+                                            class="form-control" id="inputName5">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label for="inputState" class="form-label">Status</label>
+                                        <select style="border: solid 1px;" id="inputState" formControlName="status"
+                                            class="form-select">
+                                            <option [selected]="true">...Select Status..</option>
+                                            <option>In-Progress</option>
+                                            <option>Completed</option>
+                                            <option>Notstarted</option>
+                                            <option>Cancelled</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label  for="inputState" class="form-label">Description</label>
+                                            <textarea style="border: solid 1px;" type="text" formControlName="desc"
+                                                class="form-control"  required
+                                                placeholder="Enter Remarks" >
+                                         </textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" (click)="submit()" class="btn btn-success">Save</button>
+                                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mat-elevation-z8 mt-3">
+                <table class="table datatable" mat-table [dataSource]="dataSource">
+                    <ng-container matColumnDef="Sr No.">
+                        <th mat-header-cell *matHeaderCellDef> Sr No. </th>
+                        <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="Task Name">
+                        <th mat-header-cell *matHeaderCellDef> Task Name </th>
+                        <td mat-cell *matCellDef="let element"> {{element. plotno}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="Assigned To">
+                        <th mat-header-cell *matHeaderCellDef> Assigned To </th>
+                        <td mat-cell *matCellDef="let element"> {{element. areasqm}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="Priority">
+                        <th mat-header-cell *matHeaderCellDef> Priority	</th>
+                        <td mat-cell *matCellDef="let element"> {{element. areasqft}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="Start Date">
+                        <th mat-header-cell *matHeaderCellDef> Start Date </th>
+                        <td mat-cell *matCellDef="let element"> {{element.govtrate}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="Due Date">
+                        <th mat-header-cell *matHeaderCellDef> Due Date </th>
+                        <td mat-cell *matCellDef="let element"> {{element.companyrate}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="Status">
+                        <th mat-header-cell *matHeaderCellDef> Status </th>
+                        <td mat-cell *matCellDef="let element"> {{element.companyrate}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="Description">
+                        <th mat-header-cell *matHeaderCellDef> Description </th>
+                        <td mat-cell *matCellDef="let element"> {{element.companyrate}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="Action">
+                        <th mat-header-cell *matHeaderCellDef> Action </th>
+                        <td mat-cell *matCellDef="let element">
+                            <span class="btn bg-primary-ico shadow btn-xs sharp mr-1">
+                                <i class="bi bi-pencil" style="font-size: 14px;"></i>
+                            </span>
+                            <span class="btn bg-danger-ico shadow btn-xs sharp mr-1">
+                                <i class="bi bi-trash" style="font-size: 14px;"></i>
+                            </span>
+                        </td>
+                    </ng-container>
+
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                </table>
+                <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons aria-label="Select page of periodic elements">
+                </mat-paginator>
+            </div>
+        </div>
+    </div>
+</section>

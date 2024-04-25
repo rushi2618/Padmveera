@@ -1,0 +1,57 @@
+.modal-footer{
+    border-top: none;
+}
+
+table tr th {
+    padding: 1px 1px 1px 5px;
+    font-weight: 500;
+    font-size: 14px;
+    color: #fff;
+    background-color: #0c9daa;
+}
+
+table tr td {
+    padding: 1px 1px 1px 5px;
+    font-weight: normal;
+}
+
+th{
+    text-align: center;
+}
+
+td {    text-align: center;
+    align-items: center;}
+.sharp {
+    padding: 3px;    width: 26px;
+    height: 26px;    min-width: 26px;
+    min-height: 26px;}
+.mr-1 {
+    margin-right: 0.25rem !important;}
+.bg-danger-ico {
+    color: #fff;    background-color: #FF6746;
+    border-color: #FF6746;}
+.bg-primary-ico {
+    color: #fff;
+    background-color: #3599bd;    border-color: #2683a5;
+}
+
+::-webkit-scrollbar{
+    width: 8px;
+}
+
+::-webkit-scrollbar-track{
+    background: rgb(235, 234, 234);
+}
+
+::-webkit-scrollbar-thumb{
+    background: #09090996;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background: #0f0f0f96;
+}
+
+
+
+ 
