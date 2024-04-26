@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { TemplateRef, ViewChild } from '@angular/core';
 import { catchError, Observable, of } from 'rxjs';
 import Swal from 'sweetalert2';
+import { formatDate } from '@angular/common';
 
 @Injectable({
   providedIn: 'root'
@@ -13,6 +14,8 @@ export class RestService {
   url: string = 'http://127.0.0.1:8000/api/';
   // url:string='https://shreetesting.smartsugarfactory.com/backend/api/'
 
+  EditID: any;
+  TodayDate = formatDate(new Date(), 'yyyy-MM-dd', 'en');
 
   PostApi(type:any,data : any): Observable<any> {
     return this.http.post(this.url + type, data);

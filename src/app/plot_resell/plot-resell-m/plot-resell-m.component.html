@@ -8,21 +8,22 @@
                 <div class="row g-3">
                     <div class="col-md-4">
                         <label for="inputName5" class="form-label">Site Name</label>
-                        <select style="border: solid 1px;" id="inputState" formControlName="site" class="form-select">
+                        <select style="border: solid 1px;" id="inputState" formControlName="sitename" class="form-select">
                             <option [selected]="true">...Select Site..</option>
+                            <option *ngFor="let item of siteList" [value]="item.id">{{item.site_name}}</option>
                         </select>
                     </div>
                     <div class="col-md-4">
                         <label for="inputName5" class="form-label">Main Owner Name</label>
-                        <input style="border: solid 1px;"type="text" formControlName="mainowner" class="form-control" id="inputName5">
+                        <input style="border: solid 1px;"type="text" formControlName="MainOwnerName" class="form-control" id="inputName5">
                     </div>
                     <div class="col-md-4">
                         <label for="inputName5" class="form-label">Plot Sold To</label>
-                        <input style="border: solid 1px;"type="text" formControlName="plot" class="form-control" id="inputName5">
+                        <input style="border: solid 1px;"type="text" formControlName="PlotSoldTo" class="form-control" id="inputName5">
                     </div>
                     <div class="col-md-4">
                         <label for="inputName5" class="form-label">Resold To Customer</label>
-                        <input style="border: solid 1px;"type="text" formControlName="resoled" class="form-control" id="inputName5">
+                        <input style="border: solid 1px;"type="text" formControlName="Resold" class="form-control" id="inputName5">
                     </div>
                     <div class="col-md-4">
                         <label for="inputName5" class="form-label">Rate</label>
@@ -30,7 +31,7 @@
                     </div>
                     <div class="col-md-4">
                         <label for="inputName5" class="form-label">End Date</label>
-                        <input style="border: solid 1px;"type="date" formControlName="end" class="form-control" id="inputName5">
+                        <input style="border: solid 1px;"type="date" formControlName="date" class="form-control" id="inputName5">
                     </div>
                     <div class="col-md-4">
                         <label for="inputName5" class="form-label">Status</label>
@@ -43,13 +44,13 @@
                     </div>
                     <div class="col-md-4">
                         <label for="inputName5" class="form-label">Description</label>
-                        <input style="border: solid 1px;"type="text" formControlName="desc" class="form-control" id="inputName5">
+                        <input style="border: solid 1px;"type="text" formControlName="description" class="form-control" id="inputName5">
                     </div>
                 </div>
                 <br>
                 <div class="mt-3">
                     <button type="submit" class="btn btn-success" (click)="submit()">Save</button>&nbsp;
-                    <button type="reset" class="btn btn-danger">Back</button>
+                    <button type="reset" class="btn btn-danger" (click)="back()">Back</button>
                 </div>
             </form><!-- End Multi Columns Form -->
         </div>

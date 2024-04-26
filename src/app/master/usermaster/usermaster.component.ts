@@ -100,7 +100,7 @@ export class UsermasterComponent {
       cancelButtonText: 'Cancel',
     }).then((result) => {
       if (result.isConfirmed) {
-        alert(JSON.stringify(element));
+        // alert(JSON.stringify(element));
         this.usermasterform.patchValue({
           id : element.id,
           Empid : element.Empid,
