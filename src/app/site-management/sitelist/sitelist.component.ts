@@ -4,6 +4,7 @@ import {AfterViewInit, Component, ViewChild} from '@angular/core';
 import {MatPaginator, MatPaginatorModule} from '@angular/material/paginator';
 import {MatTableDataSource, MatTableModule} from '@angular/material/table';
 import { FormGroup,FormControl,Validators } from '@angular/forms';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-sitelist',
@@ -24,17 +25,68 @@ export class SitelistComponent {
 
   }
 
-  submit(){
-    
+  ngOnInit():void{
+    window.scrollTo(0,0);
+    this.getData();
+  }
+
+  search(){
+
+  }
+
+  getData(){
+    let type = 'SiteManagement_lists/';
+    this.rest.getDataApi(type).subscribe((data:any)=>{
+      this.sitelist = data.lists;
+      this.dataSource = new MatTableDataSource(this.sitelist);
+      this.dataSource.paginator = this.paginator;
+    });
+  }
+
+  editData(element:any){
+    Swal.fire({
+      title: 'Confirmation',
+      text: 'Are you sure you want to Edit Record ?',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, Edit it!',
+      cancelButtonText: 'Cancel',
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.rest.EditID = element.id;
+        this.nexpage();
+      }
+    });
+  }
+
+  deleteData(element:any){
+    Swal.fire({
+      title: 'Confirmation',
+      text: 'Are you sure you want to delete this row?',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!',
+      cancelButtonText: 'Cancel',
+    }).then((result) => {
+      if (result.isConfirmed) {
+        let type = 'delete_SiteManagement/'
+        this.rest.deleteDataApi(type,element).subscribe((data: any) => {
+          Swal.fire('success', 'Data Delete Successfully', 'success');
+          this.ngOnInit();
+        },(err) => {
+          Swal.fire('error', 'Data Not Delete', 'error');
+        });
+      }
+    });
   }
 
   nexpage(){
     this.route.navigateByUrl('homepage/sitemanagement/sitemaster')
   }
-  // 
-  // this.dataSource = new MatTableDataSource(this.inwardList);
-  // this.dataSource.paginator = this.paginator;
-
 }
 
 export interface siteList {
