@@ -6,7 +6,6 @@ import { Component, ElementRef, HostListener } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
-
   isDropdownOpen:boolean = false;
   isDropdownOpen1:boolean = false;
   isCollapsed: boolean = false;
@@ -48,6 +47,10 @@ export class HomeComponent {
   scc:string='';
   st:string='';
   stc:string='';
+  empD:string='';
+  empB:string='';
+  salD:string='';
+  salB:string='';
 
   currentDate=new Date();
 
@@ -60,9 +63,46 @@ export class HomeComponent {
     this.isDropdownOpen1=false
   }
 
+  SD(){
+    this.empD='';
+    this.empB='';
+    this.mr='';
+    this.mrc='';
+    this.so='';
+    this.soc='';
+    this.si='';
+    this.sic='';
+    this.sc='';
+    this.scc='';
+    this.st='';
+    this.stc='';
+    this.salB='background-color:blue';
+    this.salD='color:blue';
+  }
+
+  ED(){
+    this.empD='color:blue';
+    this.empB='background-color:blue';
+    this.mr='';
+    this.mrc='';
+    this.so='';
+    this.soc='';
+    this.si='';
+    this.sic='';
+    this.sc='';
+    this.scc='';
+    this.st='';
+    this.stc='';
+    this.salB='';
+    this.salD='';
+  }
+
+
   MR(){
    this.mr='color:blue';
    this.mrc='background-color:blue';
+   this.empB='';
+   this.empD='';
    this.so='';
    this.soc='';
    this.si='';
@@ -71,11 +111,15 @@ export class HomeComponent {
    this.scc='';
    this.st='';
    this.stc='';
+   this.salB='';
+    this.salD='';
   }
 
   SO(){
    this.mr='';
    this.mrc='';
+   this.empB='';
+   this.empD='';
    this.so='color:blue';
    this.soc='background-color:blue'
    this.si='';
@@ -84,19 +128,25 @@ export class HomeComponent {
    this.scc='';
    this.st='';
    this.stc='';
+   this.salB='';
+    this.salD='';
   }
 
   SI(){
    this.mr='';
    this.mrc='';
    this.so='';
-   this.soc=''
+   this.soc='';
+   this.empB='';
+   this.empD='';
    this.si='color:blue';
    this.sic='background-color:blue';
    this.sc='';
    this.scc='';
    this.st='';
    this.stc='';
+   this.salB='';
+    this.salD='';
   }
 
   SC(){
@@ -106,10 +156,14 @@ export class HomeComponent {
     this.soc=''
     this.si='';
     this.sic='';
+    this.empB='';
+    this.empD='';
     this.sc='color:blue';
     this.scc='background-color:blue';
     this.st='';
     this.stc='';
+    this.salB='';
+    this.salD='';
   }
 
   ST(){
@@ -121,8 +175,12 @@ export class HomeComponent {
     this.sic='';
     this.sc='';
     this.scc='';
+    this.empB='';
+    this.empD='';
     this.st='color:blue';
     this.stc='background-color:blue';
+    this.salB='';
+    this.salD='';
   }
 
   DashM(){
@@ -144,6 +202,10 @@ export class HomeComponent {
       this.scc='';
       this.st='';
       this.stc='';
+      this.empB='';
+      this.empD='';
+      this.salB='';
+    this.salD='';
   }
 
   estimateM(){
@@ -165,6 +227,10 @@ export class HomeComponent {
       this.scc='';
       this.st='';
       this.stc='';
+      this.empB='';
+      this.empD='';
+      this.salB='';
+    this.salD='';
   }
 
   siteM(){
@@ -186,6 +252,10 @@ export class HomeComponent {
       this.scc='';
       this.st='';
       this.stc='';
+      this.empB='';
+      this.empD='';
+      this.salB='';
+    this.salD='';
   }
 
   taskM(){
@@ -207,6 +277,10 @@ export class HomeComponent {
       this.scc='';
       this.st='';
       this.stc='';
+      this.empB='';
+      this.empD='';
+      this.salB='';
+    this.salD='';
   }
 
   govtOfficeM()
@@ -229,6 +303,10 @@ export class HomeComponent {
       this.scc='';
       this.st='';
       this.stc='';
+      this.empB='';
+      this.empD='';
+      this.salB='';
+    this.salD='';
   }
 
   RofficeM(){
@@ -250,6 +328,10 @@ export class HomeComponent {
       this.scc='';
       this.st='';
       this.stc='';
+      this.empB='';
+      this.salB='';
+    this.salD='';
+      this.empD='';
   }
 
   ThirdPartyM(){
@@ -271,6 +353,10 @@ this.site='';
       this.scc='';
       this.st='';
       this.stc='';
+      this.empB='';
+      this.empD='';
+      this.salB='';
+    this.salD='';
   }
 
   MarketingM(){
@@ -292,6 +378,10 @@ this.site='';
       this.scc='';
       this.st='';
       this.stc='';
+      this.empB='';
+      this.empD='';
+      this.salB='';
+    this.salD='';
   }
 
   toggleDropdown(event: Event): void {
@@ -339,6 +429,8 @@ this.site='';
       this.scc='';
       this.st='';
       this.stc='';
+      this.empB='';
+      this.empD='';
     this.isCollapsed1=false;
     this.isCollapsed2=false;
     this.isCollapsed3=false;
@@ -363,6 +455,10 @@ this.site='';
     this.stock='color:blue';
     this.accounting='';
     this.report='';
+    this.empB='';
+    this.empD='';
+    this.salB='';
+    this.salD='';
     this.isCollapsed=false;
     this.isCollapsed2=false;
     this.isCollapsed3=false;
@@ -390,6 +486,10 @@ this.site='';
     this.accounting='';
     this.report='';
     this.mr='';
+    this.empB='';
+    this.empD='';
+    this.salB='';
+    this.salD='';
       this.mrc='';
       this.so='';
       this.soc='';
@@ -456,6 +556,10 @@ this.site='';
     this.customer='';
     this.hr='';
     this.stock='';
+    this.empB='';
+    this.empD='';
+    this.salB='';
+    this.salD='';
     this.accounting='color:blue';
     this.report='';
     this.mr='';
@@ -483,6 +587,8 @@ this.site='';
     this.site='';
     this.task='';
     this.govt='';
+    this.empB='';
+    this.empD='';
     this.rofffice='';
     this.thirdparty='';
     this.marketingM='';
@@ -490,6 +596,8 @@ this.site='';
     this.hr='';
     this.stock='';
     this.accounting='';
+    this.salB='';
+    this.salD='';
     this.report='color:blue';
     this.mr='';
       this.mrc='';
@@ -523,6 +631,8 @@ this.site='';
     this.isCollapsed4=false;
     this.isCollapsed5=false;
     this.mr='';
+    this.salB='';
+    this.salD='';
       this.mrc='';
       this.so='';
       this.soc='';
@@ -532,6 +642,8 @@ this.site='';
       this.scc='';
       this.st='';
       this.stc='';
+      this.empB='';
+      this.empD='';
   }
 
   subtoggle(event:Event)

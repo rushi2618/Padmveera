@@ -1,0 +1,90 @@
+<section class="section">
+    <div class="card rounded">
+        <div class="card-body">
+            <h1>Add Employee</h1>
+            <br>
+            <!-- Multi Columns Form -->
+            <form [formGroup]="employeeformform">
+                <div class="row g-3">
+                    <div class="col-md-4">
+                        <label for="inputName5" class="form-label">Employee Name</label>
+                        <input style="border: solid 1px;"type="text" formControlName="employee_name" class="form-control" id="inputName5">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="inputName5" class="form-label">Email ID</label>
+                        <input style="border: solid 1px;"type="text" formControlName="email_id" class="form-control" id="inputName5">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="inputName5" class="form-label">Contact No.</label>
+                        <input style="border: solid 1px;"type="number" formControlName="contact_no" class="form-control" id="inputName5">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="inputName5" class="form-label">Emergency Contact No.</label>
+                        <input style="border: solid 1px;"type="text" formControlName="emergency_no" class="form-control" id="inputName5">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="inputName5" class="form-label">Designation</label>
+                        <input style="border: solid 1px;"type="text" formControlName="designation" class="form-control" id="inputName5">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="inputName5" class="form-label">Joining Date</label>
+                        <input style="border: solid 1px;"type="date" formControlName="joining_date" class="form-control" id="inputName5">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="inputName5" class="form-label">DOB</label>
+                        <input style="border: solid 1px;"type="date" formControlName="dob" class="form-control" id="inputName5">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="inputName5" class="form-label">Salary</label>
+                        <input style="border: solid 1px;"type="text" formControlName="salary" class="form-control" id="inputName5">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="inputName5" class="form-label">Gender</label>
+                        <select style="border: solid 1px;" id="inputState" formControlName="gender" class="form-select">
+                            <option [selected]="true">...Select Gender..</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="inputName5" class="form-label">Address</label>
+                        <input style="border: solid 1px;"type="text" formControlName="address" class="form-control" id="inputName5">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="inputName5" class="form-label">Aadhar No</label>
+                        <input style="border: solid 1px;"type="number" formControlName="adhar_no" class="form-control" id="inputName5">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="inputName5" class="form-label">Pan No</label>
+                        <input style="border: solid 1px;"type="text" formControlName="pan_no" class="form-control" id="inputName5">
+                    </div>
+                    <div class="col-md-12">
+                        <h2>Bank Details</h2>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="inputName5" class="form-label">Bank Name</label>
+                        <input style="border: solid 1px;"type="text" formControlName="bank_name" class="form-control" id="inputName5">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="inputName5" class="form-label">Branch Name</label>
+                        <input style="border: solid 1px;"type="text" formControlName="bank_branch" class="form-control" id="inputName5">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="inputName5" class="form-label">Account No.</label>
+                        <input style="border: solid 1px;"type="text" formControlName="bank_acc_no" class="form-control" id="inputName5">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="inputName5" class="form-label">IFSC Code</label>
+                        <input style="border: solid 1px;"type="text" formControlName="IFSC_code" class="form-control" id="inputName5">
+                    </div>
+                </div>
+                <br>
+                <div class="mt-3">
+                    <button type="submit" class="btn btn-success" (click)="submit()">Save</button>&nbsp;
+                    <button type="reset" class="btn btn-danger">Cancel</button>
+                </div>
+            </form><!-- End Multi Columns Form -->
+        </div>
+    </div>
+</section>

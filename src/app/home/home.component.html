@@ -299,8 +299,8 @@
             </a>
             <ul id="hr" class="nav-content collapse " [class.show]="isCollapsed3" data-bs-parent="#sidebar-nav">
                 <li>
-                    <a style="cursor: pointer;" routerLinkActive="active">
-                        <i class="bi bi-circle"></i><span>Employee Management</span>
+                    <a style="cursor: pointer;" [style]="empD" routerLinkActive="active" (click)="ED()" routerLink="HR-Payroll/employee-management">
+                        <i [style]="empB" class="bi bi-circle"></i><span>Employee Management</span>
                     </a>
                 </li>
                 <li>
@@ -316,23 +316,23 @@
             </a>
             <ul id="charts-nav" [class.show]="isCollapsed4" class="nav-content collapse " data-bs-parent="#sidebar-nav">
                 <li>
-                    <a style="cursor: pointer;" routerLinkActive="active">
+                    <a style="cursor: pointer;" routerLinkActive="active" routerLink="Accounting/account-transaction">
                         <i class="bi bi-circle"></i><span>Account Transactions</span>
                     </a>
                 </li>
                 <li>
-                    <a style="cursor: pointer;" routerLinkActive="active">
+                    <a style="cursor: pointer;" routerLink="Accounting/expense-transaction" routerLinkActive="active">
                         <i class="bi bi-circle"></i><span>Expense Transactions</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a style="cursor: pointer;" class="nav-link collapsed" data-bs-target="#inc" routerLinkActive="active"  href="#" (click)="subtoggle($event)">
+                    <a style="cursor: pointer;" class="nav-link collapsed" data-bs-target="#inc" routerLinkActive="active"(click)="subtoggle($event)">
                         <i class="bi bi-circle"></i><span>Income Transactions</span><i style="font-size: larger; width: 25%;" class="bi bi-chevron-down ms-auto"></i>
                     </a>
               
                 <ul style="margin-left: 10%;" id="inc" class="nav-content collapse" [class.show]="subcollapse">
                         <li>
-                        <a style="cursor: pointer;" routerLinkActive="active">
+                        <a style="cursor: pointer;" routerLink="Accounting/income-transaction/client-income" routerLinkActive="active">
                             <i class="bi bi-circle"></i><span>Client Income</span>
                         </a>
                     </li>
@@ -346,57 +346,57 @@
             </a>
             <ul id="icons-nav" class="nav-content collapse " [class.show]="isCollapsed5" data-bs-parent="#sidebar-nav">
                 <li>
-                    <a style="cursor: pointer;" routerLinkActive="active">
+                    <a style="cursor: pointer;" routerLink="Reporting/billing-report" routerLinkActive="active">
                         <i class="bi bi-circle"></i><span>Billing Report</span>
                     </a>
                 </li>
                 <li>
-                    <a style="cursor: pointer;" routerLinkActive="active">
+                    <a style="cursor: pointer;" routerLink="Reporting/office-report" routerLinkActive="active">
                         <i class="bi bi-circle"></i><span>Office Report</span>
                     </a>
                 </li>
                 <li>
-                    <a style="cursor: pointer;" routerLinkActive="active">
+                    <a style="cursor: pointer;" routerLink="Reporting/booking-report" routerLinkActive="active">
                         <i class="bi bi-circle"></i><span>Booking Report</span>
                     </a>
                 </li>
                 <li>
-                    <a style="cursor: pointer;" routerLinkActive="active">
+                    <a style="cursor: pointer;" routerLink="Reporting/stock-report" routerLinkActive="active">
                         <i class="bi bi-circle"></i><span>Stock Report</span>
                     </a>
                 </li>
                 <li>
-                    <a style="cursor: pointer;" routerLinkActive="active">
+                    <a style="cursor: pointer;" routerLink="Reporting/crm-report" routerLinkActive="active">
                         <i class="bi bi-circle"></i><span>CRM Report</span>
                     </a>
                 </li>
                 <li>
-                    <a style="cursor: pointer;" routerLinkActive="active">
+                    <a style="cursor: pointer;" routerLink="Reporting/followup-report" routerLinkActive="active">
                         <i class="bi bi-circle"></i><span>Follow Up Report</span>
                     </a>
                 </li>
                 <li>
-                    <a style="cursor: pointer;" routerLinkActive="active">
+                    <a style="cursor: pointer;" routerLink="Reporting/employee-report" routerLinkActive="active">
                         <i class="bi bi-circle"></i><span>Employee Report</span>
                     </a>
                 </li>
                 <li>
-                    <a style="cursor: pointer;" routerLinkActive="active">
+                    <a style="cursor: pointer;" routerLink="Reporting/advertisement-report" routerLinkActive="active">
                         <i class="bi bi-circle"></i><span>Advertisement Report</span>
                     </a>
                 </li>
                 <li>
-                    <a style="cursor: pointer;" routerLinkActive="active">
+                    <a style="cursor: pointer;" routerLink="Reporting/socialmedia-report" routerLinkActive="active">
                         <i class="bi bi-circle"></i><span>Social Media Report</span>
                     </a>
                 </li>
                 <li>
-                    <a style="cursor: pointer;" routerLinkActive="active">
+                    <a style="cursor: pointer;" routerLink="Reporting/stages-report" routerLinkActive="active">
                         <i class="bi bi-circle"></i><span>Stages Report</span>
                     </a>
                 </li>
                 <li>
-                    <a style="cursor: pointer;" routerLinkActive="active">
+                    <a style="cursor: pointer;" routerLink="Reporting/account-report" routerLinkActive="active">
                         <i class="bi bi-circle"></i><span>Account Report</span>
                     </a>
                 </li>

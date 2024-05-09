@@ -36,6 +36,23 @@ import { StockconsumeFormComponent } from './stock_management/stockconsume-form/
 import { StocktransferListComponent } from './stock_management/stocktransfer-list/stocktransfer-list.component';
 import { StocktransferFormComponent } from './stock_management/stocktransfer-form/stocktransfer-form.component';
 import { StockinwardformComponent } from './stock_management/stockinwardform/stockinwardform.component';
+import { SiteViewpageComponent } from './site-management/site-viewpage/site-viewpage.component';
+import { EmployeeFormComponent } from './HR-Payroll/employee-form/employee-form.component';
+import { EmployeeManagementComponent } from './HR-Payroll/employee-management/employee-management.component';
+import { AccountTransactionComponent } from './Accounting/account-transaction/account-transaction.component';
+import { BillingListComponent } from './Accounting/billing-list/billing-list.component';
+import { ClientIcomeComponent } from './Accounting/client-icome/client-icome.component';
+import { AccountReportComponent } from './Reporting/account-report/account-report.component';
+import { AdvertisementReportComponent } from './Reporting/advertisement-report/advertisement-report.component';
+import { BillingReportComponent } from './Reporting/billing-report/billing-report.component';
+import { BookingReportComponent } from './Reporting/booking-report/booking-report.component';
+import { CrmReportComponent } from './Reporting/crm-report/crm-report.component';
+import { EmployeeReportComponent } from './Reporting/employee-report/employee-report.component';
+import { FollowupReportComponent } from './Reporting/followup-report/followup-report.component';
+import { OfficeReportComponent } from './Reporting/office-report/office-report.component';
+import { StagesReportComponent } from './Reporting/stages-report/stages-report.component';
+import { StockReportComponent } from './Reporting/stock-report/stock-report.component';
+import { SocialmediaReportComponent } from './Reporting/socialmedia-report/socialmedia-report.component';
 
 const routes: Routes = [
   {path: '', component: LoginComponent},
@@ -76,7 +93,23 @@ const routes: Routes = [
       {path:'customer-management/visited',component:VisitedCustomerComponent},
       {path:'master/stagetypemaster',component:StagetypemasterComponent},
       {path:'customer-management/registered',component:RegisteredCustomerComponent},
-      {path:'customer-management/registered1',component:RegisterCustomer1Component}
+      {path:'customer-management/registered1',component:RegisterCustomer1Component},
+      {path:'Reporting/billing-report',component:BillingReportComponent},
+      {path:'Reporting/office-report',component:OfficeReportComponent},
+      {path:'Reporting/booking-report',component:BookingReportComponent},
+      {path:'Reporting/stock-report',component:StockReportComponent},
+      {path:'Reporting/crm-report',component:CrmReportComponent},
+      {path:'Reporting/followup-report',component:FollowupReportComponent},
+      {path:'Reporting/employee-report',component:EmployeeReportComponent},
+      {path:'Reporting/advertisement-report',component:AdvertisementReportComponent},
+      {path:'Reporting/socialmedia-report',component:SocialmediaReportComponent},
+      {path:'Reporting/stages-report',component:StagesReportComponent},
+      {path:'Reporting/account-report',component:AccountReportComponent},
+      {path:'Accounting/account-transaction',component:AccountTransactionComponent},
+      {path:'Accounting/expense-transaction',component:BillingListComponent},
+      {path:'Accounting/income-transaction/client-income',component:ClientIcomeComponent},
+      {path:'HR-Payroll/employee-management',component:EmployeeManagementComponent},
+      {path:'HR-Payroll/employee-form',component:EmployeeFormComponent}
     ]
   }
 ];

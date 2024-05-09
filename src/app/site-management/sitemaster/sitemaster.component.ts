@@ -56,6 +56,9 @@ export class SitemasterComponent {
 
   editSingleData:any;
   ngOnInit():void{
+    this.tableData = [];
+    this.plotlist = [];
+    this.dataSource = new MatTableDataSource(this.plotlist);
     window.scrollTo(0,0);
     this.sitemasterform.reset();
     this.sitemasterform.controls.starting_date.setValue(this.rest.TodayDate);

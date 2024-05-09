@@ -16,6 +16,7 @@ export class RestService {
 
   EditID: any;
   TodayDate = formatDate(new Date(), 'yyyy-MM-dd', 'en');
+  UserName:any = sessionStorage.getItem('username');
 
   PostApi(type:any,data : any): Observable<any> {
     return this.http.post(this.url + type, data);

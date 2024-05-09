@@ -1,0 +1,83 @@
+<section class="section">
+    <div class="card rounded">
+        <div class="card-body">
+            <h1>Account Expense</h1>
+            <br>
+            <!-- Multi Columns Form -->
+            <form [formGroup]=" accounttransactionform">
+                <div class="row g-3">
+                    <div class="col-md-4">
+                        <label for="inputState" class="form-label">Entry Type</label>
+                        <select style="border: solid 1px;" formControlName="e_type" id="inputState" class="form-select">
+                            <option  [selected]="true">...Select Entry Type...</option>     
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="inputName5" class="form-label">Date</label>
+                        <input style="border: solid 1px;"type="date" formControlName="date" class="form-control" id="inputName5">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="inputName5" class="form-label">Received By</label>
+                        <input style="border: solid 1px;"type="text" formControlName="received_by" class="form-control" id="inputName5">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="inputName5" class="form-label">Receiver</label>
+                        <input style="border: solid 1px;"type="text" formControlName="receiver" class="form-control" id="inputName5">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="inputState" class="form-label">Site Name</label>
+                        <select style="border: solid 1px;" formControlName="site" id="inputState" class="form-select">
+                            <option  [selected]="true">...Select Site Name...</option>     
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="inputName5" class="form-label">Purpose</label>
+                        <input style="border: solid 1px;"type="text" formControlName="purpose" class="form-control" id="inputName5">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="inputState" class="form-label">Main Ledger</label>
+                        <select style="border: solid 1px;" formControlName="main_ledger" id="inputState" class="form-select">
+                            <option  [selected]="true">...Select Main Ledger...</option>     
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="inputState" class="form-label">Sub Ledger</label>
+                        <select style="border: solid 1px;" formControlName="sub_ledger" id="inputState" class="form-select">
+                            <option  [selected]="true">...Select Sub Ledger...</option>     
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="inputState" class="form-label">Income/Expense</label>
+                        <select style="border: solid 1px;" formControlName="inc_exp" id="inputState" class="form-select">
+                            <option  [selected]="true">...Select Type...</option>     
+                        </select>
+                    </div>
+
+                    <div class="col-md-4">
+                        <label for="inputName5" class="form-label">Amount</label>
+                        <input style="border: solid 1px;"type="text" formControlName="amount" class="form-control" id="inputName5">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="inputName5" class="form-label">Balance</label>
+                        <input style="border: solid 1px;"type="text" formControlName="balance" class="form-control" id="inputName5">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="inputState" class="form-label">Mode Of Payment</label>
+                        <select style="border: solid 1px;" formControlName="payment" id="inputState" class="form-select">
+                            <option  [selected]="true">...Select Payment Mode...</option>     
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="inputName5" class="form-label">Narration</label>
+                        <input style="border: solid 1px;"type="text" formControlName="narration" class="form-control" id="inputName5">
+                    </div>
+                </div>
+                <br>
+                <div class="mt-3">
+                    <button type="submit" class="btn btn-success" (click)="submit()">Save</button>&nbsp;
+                    <button type="reset" class="btn btn-danger">Cancel</button>
+                </div>
+            </form><!-- End Multi Columns Form -->
+        </div>
+    </div>
+</section>

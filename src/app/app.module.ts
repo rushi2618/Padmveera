@@ -44,6 +44,23 @@ import { StockconsumeFormComponent } from './stock_management/stockconsume-form/
 import { StocktransferFormComponent } from './stock_management/stocktransfer-form/stocktransfer-form.component';
 import { StocktransferListComponent } from './stock_management/stocktransfer-list/stocktransfer-list.component';
 import { StockinwardformComponent } from './stock_management/stockinwardform/stockinwardform.component';
+import { SiteViewpageComponent } from './site-management/site-viewpage/site-viewpage.component';
+import { EmployeeFormComponent } from './HR-Payroll/employee-form/employee-form.component';
+import { EmployeeManagementComponent } from './HR-Payroll/employee-management/employee-management.component';
+import { AccountTransactionComponent } from './Accounting/account-transaction/account-transaction.component';
+import { BillingListComponent } from './Accounting/billing-list/billing-list.component';
+import { ClientIcomeComponent } from './Accounting/client-icome/client-icome.component';
+import { AccountReportComponent } from './Reporting/account-report/account-report.component';
+import { AdvertisementReportComponent } from './Reporting/advertisement-report/advertisement-report.component';
+import { BillingReportComponent } from './Reporting/billing-report/billing-report.component';
+import { BookingReportComponent } from './Reporting/booking-report/booking-report.component';
+import { CrmReportComponent } from './Reporting/crm-report/crm-report.component';
+import { EmployeeReportComponent } from './Reporting/employee-report/employee-report.component';
+import { FollowupReportComponent } from './Reporting/followup-report/followup-report.component';
+import { OfficeReportComponent } from './Reporting/office-report/office-report.component';
+import { StagesReportComponent } from './Reporting/stages-report/stages-report.component';
+import { StockReportComponent } from './Reporting/stock-report/stock-report.component';
+import { SocialmediaReportComponent } from './Reporting/socialmedia-report/socialmedia-report.component';
 
 @NgModule({
   declarations: [
@@ -83,7 +100,24 @@ import { StockinwardformComponent } from './stock_management/stockinwardform/sto
     RegisterCustomer1Component,
     RegisteredCustomerComponent,
     VisitedCustomerComponent,
-    StagetypemasterComponent
+    StagetypemasterComponent,
+    SiteViewpageComponent,
+    EmployeeFormComponent,
+    EmployeeManagementComponent,
+    AccountTransactionComponent,
+    BillingListComponent,
+    ClientIcomeComponent,
+    AccountReportComponent,
+    AdvertisementReportComponent,
+    BillingReportComponent,
+    BookingReportComponent,
+    CrmReportComponent,
+    EmployeeReportComponent,
+    FollowupReportComponent,
+    OfficeReportComponent,
+    StagesReportComponent,
+    StockReportComponent,
+    SocialmediaReportComponent
   ],
   imports: [
     BrowserModule,
