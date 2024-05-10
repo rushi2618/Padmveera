@@ -49,12 +49,13 @@ export class MaterialRequisitionlistComponent {
   }
 
   approved(data:any){
-    this.rest.EditID = data.id;
-    this.router.navigateByUrl('homepage/stockmanagement/stockinwardlist');
+    this.rest.dataID = data.id;
+    this.router.navigateByUrl('homepage/stockmanagement/stockform');
   }
 
   approval(data:any){
-    if(this.rest.UserName === data.send_to){
+    alert(this.rest.userID);
+    if(this.rest.userID === data.send_to){
       let type = 'update_approve_status/'
       this.rest.updateApi(type,data).subscribe((element:any)=>{
         this.getData();

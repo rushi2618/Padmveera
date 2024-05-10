@@ -55,6 +55,7 @@ export class StockOrderformComponent {
   }
 
   editSingleData:any;
+  editData: any = [];
   ngOnInit():void{
     window.scrollTo(0,0);
     this.tableData = [];
@@ -62,6 +63,14 @@ export class StockOrderformComponent {
     this.dataSource = new MatTableDataSource(this.stockorderlist);
     this.stockorderform.reset();
     this.stockorderform.controls.date.setValue(this.rest.TodayDate);
+    if (this.rest.dataID > 0) {
+      let type = 'single_material_data/'
+      this.rest.getApi(type, this.rest.dataID).subscribe((data: any) => {
+        this.editData = data.single_data; 
+        this.UpdateData();
+      })
+      this.rest.dataID = 0;
+    }
     if(this.rest.EditID > 0){
       // alert(this.rest.EditID);
       let type = 'single_stockorderdetails_data/';
@@ -78,6 +87,15 @@ export class StockOrderformComponent {
     this.getSiteList();
   }
 
+  UpdateData() {
+    this.stockorderform.patchValue({
+      site_name : this.editData[0].sitename,
+      stage_name : this.editData[0].stage_id,
+      type: this.editData[0].type,
+    });
+    this.getStageType(this.editData[0].sitename);
+  }
+
   updateFormData(){
     this.stockorderform.patchValue({
       id: this.editSingleData.id,
@@ -87,7 +105,15 @@ export class StockOrderformComponent {
       vendor_name: this.editSingleData.vendor_name,
       type: this.editSingleData.type,
     });
+    this.getStageType(this.editSingleData.site_name);
     this.getorders();
+  }
+
+  getdata(){
+    if(this.editData.length > 0){
+      this.orderModelForm.controls.material_name.setValue(this.editData[0].material);
+      this.orderModelForm.controls.ordered_quantity.setValue(this.editData[0].quantity);
+    }
   }
 
   getMaterial(){
@@ -277,6 +303,13 @@ export class StockOrderformComponent {
       let type = 'store_stockorderdetails';
       this.rest.PostApi(type,obj).subscribe((data:any)=>{
         Swal.fire('success', "Data Saved Successful", 'success');
+        if(this.editData.length > 0){
+          let data = this.editData[0]
+          let type = 'update_approve_status_new/'
+          this.rest.updateApi(type,data).subscribe((element:any)=>{
+            
+          });
+        }
         this.ngOnInit();
       });
     }else{

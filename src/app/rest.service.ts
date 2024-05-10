@@ -15,8 +15,12 @@ export class RestService {
   // url:string='https://shreetesting.smartsugarfactory.com/backend/api/'
 
   EditID: any;
+  dataID: any;
   TodayDate = formatDate(new Date(), 'yyyy-MM-dd', 'en');
   UserName:any = sessionStorage.getItem('username');
+  userID:any = sessionStorage.getItem('userID');
+  userRole:any = sessionStorage.getItem('userRole');
+  userEmail:any = sessionStorage.getItem('userEmail');
 
   PostApi(type:any,data : any): Observable<any> {
     return this.http.post(this.url + type, data);
